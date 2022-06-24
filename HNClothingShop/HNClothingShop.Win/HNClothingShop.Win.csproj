@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4293A78-3024-4099-8C5A-D62D37B8E761}</ProjectGuid>
+    <ProjectGuid>{6376D577-21A3-454D-AE88-48FA130AE9A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HNClothingShop.Win</RootNamespace>
@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HNClothingShop.BL\HNClothingShop.BL.csproj">
-      <Project>{73bfaf24-865c-480b-a02a-7ace5ee5734f}</Project>
+      <Project>{469b0b71-f84d-482d-a188-0eae13237399}</Project>
       <Name>HNClothingShop.BL</Name>
     </ProjectReference>
   </ItemGroup>

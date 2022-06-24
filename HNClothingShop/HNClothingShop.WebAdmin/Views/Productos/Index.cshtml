@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HNClothingShop.BL.Producto>
 
 @{
-    ViewBag.Title = "Porductos";
+    ViewBag.Title = "Productos";
 }
 
 <h2>Productos</h2>
@@ -15,10 +15,16 @@
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Precio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Existencia)
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
         </th>
         <th></th>
     </tr>
@@ -29,14 +35,20 @@
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Existencia)
+            <img src="@item.UrlImagen" alt="@item.Descripcion" style="max-width:64px; height:auto;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Detalles", new { id=item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
             @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
         </td>
     </tr>

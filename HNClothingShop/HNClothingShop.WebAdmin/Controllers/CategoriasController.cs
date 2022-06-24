@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace HNClothingShop.WebAdmin.Controllers
-{  
+{
     public class CategoriasController : Controller
     {
         CategoriasBL _categoriasBL;
@@ -24,31 +24,39 @@ namespace HNClothingShop.WebAdmin.Controllers
             return View(listadeCategorias);
         }
 
+        [HttpGet]
         public ActionResult Crear()
-        {
-            var nuevaCategoria = new Categoria();
 
-            return View(nuevaCategoria);
+        {
+
+            var nuevoCategoria = new Categoria();
+
+            return View(nuevoCategoria);
         }
 
         [HttpPost]
         public ActionResult Crear(Categoria categoria)
-        {
-           
-                _categoriasBL.GuardarCategoria(categoria);
 
+        {
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcio", "La descripcion no debe contener espacios al inicio o al final");
+                    return View(categoria);
+
+                }
+                _categoriasBL.GuardarCategoria(categoria);
                 return RedirectToAction("Index");
-  
+
+            }
+            return View(categoria);
         }
 
-
-
-
-
-
         public ActionResult Editar(int id)
+
         {
-            var categoria = _categoriasBL.ObtenerCategorias(id);
+            var categoria = _categoriasBL.ObtenerCategoria(id);
 
             return View(categoria);
         }
@@ -56,37 +64,42 @@ namespace HNClothingShop.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Categoria categoria)
         {
-            
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcio", "La descripcion no debe contener espacios al inicio o al final");
+                    return View(categoria);
 
+                }
                 _categoriasBL.GuardarCategoria(categoria);
-
                 return RedirectToAction("Index");
-           
+
+            }
+            return View(categoria);
+
         }
-
-
-
 
         public ActionResult Detalle(int id)
         {
-            var categoria = _categoriasBL.ObtenerCategorias(id);
-
+            var categoria = _categoriasBL.ObtenerCategoria(id);
             return View(categoria);
+
         }
 
         public ActionResult Eliminar(int id)
         {
-            var categoria = _categoriasBL.ObtenerCategorias(id);
-
+            var categoria = _categoriasBL.ObtenerCategoria(id);
             return View(categoria);
+
         }
 
         [HttpPost]
         public ActionResult Eliminar(Categoria categoria)
         {
             _categoriasBL.EliminarCategoria(categoria.Id);
-
             return RedirectToAction("Index");
+
         }
     }
 }

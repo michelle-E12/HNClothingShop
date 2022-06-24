@@ -9,7 +9,7 @@ namespace HNClothingShop.Win
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()

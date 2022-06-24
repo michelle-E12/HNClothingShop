@@ -24,6 +24,7 @@ namespace HNClothingShop.BL
         }
 
         public void GuardarCategoria(Categoria categoria)
+
         {
             if (categoria.Id == 0)
             {
@@ -33,12 +34,13 @@ namespace HNClothingShop.BL
             {
                 var categoriaExistente = _contexto.Categorias.Find(categoria.Id);
                 categoriaExistente.Descripcion = categoria.Descripcion;
+                
             }
 
             _contexto.SaveChanges();
         }
 
-        public Categoria ObtenerCategorias(int id)
+        public Categoria ObtenerCategoria(int id)
         {
             var categoria = _contexto.Categorias.Find(id);
 
@@ -48,7 +50,6 @@ namespace HNClothingShop.BL
         public void EliminarCategoria(int id)
         {
             var categoria = _contexto.Categorias.Find(id);
-
             _contexto.Categorias.Remove(categoria);
             _contexto.SaveChanges();
         }

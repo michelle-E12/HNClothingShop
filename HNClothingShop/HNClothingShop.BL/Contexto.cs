@@ -11,7 +11,7 @@ namespace HNClothingShop.BL
     public class Contexto: DbContext
     {
         public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\HNClothingShopDB.mdf")
+            Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\HNClothingShopBN.mdf")
         {
 
         }
@@ -19,7 +19,6 @@ namespace HNClothingShop.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            
         }
 
         public DbSet<Producto> Productos { get; set; }

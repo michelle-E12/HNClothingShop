@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73BFAF24-865C-480B-A02A-7ACE5EE5734F}</ProjectGuid>
+    <ProjectGuid>{469B0B71-F84D-482D-A188-0EAE13237399}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HNClothingShop.BL</RootNamespace>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntifyFramework, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntifyFramework.1.0.0.1\lib\net40\EntifyFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +56,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="pluralizingTableNameConvention.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="ProductosBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
