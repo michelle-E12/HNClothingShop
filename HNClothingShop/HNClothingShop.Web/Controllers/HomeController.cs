@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HNClothingShop.BL;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +13,11 @@ namespace HNClothingShop.web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var productosBL = new ProductosBL();
+            var listadeProductos = productosBL.ObtenerProductosActivos();
+            ViewBag.adminWebsiteURL = ConfigurationManager.AppSettings["adminWebsiteURL"];
+
+            return View(listadeProductos);
         }
     }
 }
