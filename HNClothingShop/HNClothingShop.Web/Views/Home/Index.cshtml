@@ -20,7 +20,7 @@
                         <img src="@(ViewBag.adminWebsiteURL + producto.UrlImagen)" alt="">
                     </div>
                     <h5 class="mt-20">@producto.Descripcion</h5>
-                    <h4 class="mt-5 color-primary"><b>@producto.Precio</b></h4>
+                    <h4 class="mt-5 color-primary"><b>L @producto.Precio</b></h4>
                 </div><!--text-center-->
             </div><!-- col-md-3 -->
         }
@@ -45,7 +45,7 @@
                 <div class="sided-90x mb-30 ">
                     <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteURL + producto.UrlImagen)" alt="Menu Image"></div><!--s-left-->
                     <div class="s-right">
-                        <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">@producto.Precio</b></h5>
+                        <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L @producto.Precio</b></h5>
                     </div><!--s-right-->
                 </div><!-- sided-90x -->
             </div><!-- food-menu -->
