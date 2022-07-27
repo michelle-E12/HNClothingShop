@@ -19,6 +19,7 @@ namespace HNClothingShop.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());
         }
 
         public DbSet<Producto> Productos { get; set; }
@@ -27,6 +28,6 @@ namespace HNClothingShop.BL
 
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
-
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
